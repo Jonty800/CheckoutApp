@@ -66,7 +66,6 @@ export default function Table({ products, setProducts }: Props) {
               </td>
               <BinTd
                 onClick={() => {
-                  console.log("click");
                   deleteProduct(product.sku);
                 }}
               >
