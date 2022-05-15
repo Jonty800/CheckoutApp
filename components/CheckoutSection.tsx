@@ -9,11 +9,13 @@ type Props = {
   setProducts: any;
 };
 
+/**
+ * Checkout section component, renders a table with the products and a button to submit the data
+ */
 export default function CheckoutSection({ products, setProducts }: Props) {
   const onSubmit = () => {
     //todo: submit to server
   };
-  console.log(products.length);
 
   return (
     <Container className="checkout-section">

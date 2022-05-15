@@ -1,5 +1,5 @@
 export default interface Item {
-  sku: string;
+  sku: string; // Unique identifier for the item
   name: string;
   size: string;
   price: number;

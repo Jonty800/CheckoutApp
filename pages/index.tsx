@@ -11,8 +11,8 @@ type Props = {
 };
 
 const Home: NextPage<Props> = (props: Props) => {
-  const { data } = props;
-  const [products, setProducts] = useState(data);
+  const { data } = props; // data is of type RootObject
+  const [products, setProducts] = useState(data); // products is of type Item[]
   return (
     <>
       <Head>

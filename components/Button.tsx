@@ -7,6 +7,9 @@ type Props = {
   disabled?: boolean | undefined;
 };
 
+/**
+ * Component for rendering a button. Use extraCSS to add extra css to the button.
+ */
 export default function Button({
   children,
   onClick,

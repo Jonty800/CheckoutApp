@@ -12,9 +12,13 @@ type Props = {
 export default function QuantityButton({ product, setProducts }: Props) {
   const [quantity, setQuantity] = useState(product.quantity);
 
+  /**
+   * Adds a quantity to a product in the cart
+   */
   const handleAdd = () => {
-    setQuantity(quantity + 1);
+    setQuantity(quantity + 1); // increment quantity
     setProducts((prevProducts: any) => {
+      // update products
       const newProducts = [...prevProducts];
       const index = newProducts.indexOf(product);
       newProducts[index] = { ...product, quantity: quantity + 1 };
@@ -22,16 +26,20 @@ export default function QuantityButton({ product, setProducts }: Props) {
     });
   };
 
+  /**
+   * Decrements a quantity to a product in the cart
+   */
   const handleMinus = () => {
     let newQuantity = quantity - 1;
     if (newQuantity < 0) {
       return;
     }
-    setQuantity(newQuantity);
+    setQuantity(newQuantity); // decrement quantity
     setProducts((prevProducts: any) => {
+      // update products
       const newProducts = [...prevProducts];
-      const index = newProducts.indexOf(product);
-      newProducts[index] = { ...product, quantity: newQuantity };
+      const index = newProducts.indexOf(product); // find index of product
+      newProducts[index] = { ...product, quantity: newQuantity }; // update product
       return newProducts;
     });
   };

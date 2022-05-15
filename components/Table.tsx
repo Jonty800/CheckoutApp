@@ -12,12 +12,23 @@ type ThProps = {
   center?: boolean;
 };
 
-const currency = "£";
+const currency = "£"; // currency symbol
 
+/**
+ * Formats a given price to a string with the currency symbol and to 2 decimal places
+ * @param price The price to format
+ * @returns The formatted price string
+ */
 const formatPrice = (price: number) => {
   return `${currency}${price.toFixed(2)}`;
 };
 
+/**
+ * Formats the product name
+ * @param name Name of the product
+ * @param size Size of the product
+ * @returns
+ */
 const formatName = (name: string, size: string) => {
   if (!size) return name;
   return `${name}, ${size}`;
@@ -25,15 +36,19 @@ const formatName = (name: string, size: string) => {
 
 export default function Table({ products, setProducts }: Props) {
   const total = products.reduce((acc: any, product: Item) => {
-    return acc + product.price * product.quantity;
+    // sets the total price of all products
+    return acc + product.price * product.quantity; // adds the price of each product multiplied by the quantity
   }, 0);
+  const tax = total * 0.2; // 20% tax
 
+  /**
+   * Deletes a product from the cart
+   * @param sku The sku of the product to remove
+   */
   const deleteProduct = (sku: string) => {
     const newProducts = products.filter((product: Item) => product.sku !== sku);
     setProducts(newProducts);
   };
-
-  const tax = total * 0.2;
 
   return (
     <StyledTable>

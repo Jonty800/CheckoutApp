@@ -3,6 +3,9 @@ import AppLogo from './images/AppLogo'
 import BasketIcon from "./images/BasketIcon"
 import { Text } from "./shared/Styles"
 
+/**
+ * NavBar component (is the top bar of the application)
+ */
 export default function NavBar() {
 
   return (

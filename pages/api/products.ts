@@ -3,7 +3,7 @@ const products: Data = require("../../assets/index.json");
 import RootObject from "../../types/RootObject";
 
 type Data = {
-  items: RootObject;
+  items: RootObject; // NOTE: This is the type of the data that is returned from the API
 };
 
 export default function handler(
